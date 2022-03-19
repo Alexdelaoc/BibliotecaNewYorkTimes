@@ -53,7 +53,7 @@ function printCard(objectA) { //Por cada objeto del array
     aBooksLink.innerHTML = "READ MORE!";
 
     //Apendamos el contenido de los elementos creados
-    listName.innerHTML = objectA.display_name;
+    listName.innerHTML = objectA.list_name;
     listOldestDate.innerHTML = `Oldest: ${objectA.oldest_published_date}`;
     listNewestDate.innerHTML = `Newest: ${objectA.newest_published_date}`;
     updates.innerHTML = `Updated: ${objectA.updated.toLowerCase()}`;
@@ -68,4 +68,4 @@ function printCard(objectA) { //Por cada objeto del array
     return createDiv;
 }
 
-printCard();
+printLists();
