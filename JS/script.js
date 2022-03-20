@@ -3,6 +3,19 @@ const urlBase = "https://api.nytimes.com/svc/books/v3/lists/";
 const urlBooksList = "";
 const apiKey = "fAqo1kJSkttYlAujHHRSHbgqXsvt5zRJ";
 
+
+
+
+
+// Función para mostrar el Gif loader mientras la ventana esta en carga
+window.onload = function (){
+    const loader = document.querySelector(".loader");
+    setTimeout(() => {
+        loader.parentElement.removeChild(loader);
+    }, 1500)
+}
+
+
 //Definimos la función asíncrona para traer el JSON de la API y pintarlo en el DOM
 async function getLists() {
     try {
@@ -15,11 +28,13 @@ async function getLists() {
 }
 
 
-
 async function printLists() {
     await getLists()
         .then(arrayLists => {
             let listsContainer = document.querySelector("#lists__container"); //Defino una variable en la que guardo la sección contenedora de las tarjetas del array de objetos.
+            listsContainer.innerHTML = " ";
+            let listHeader = document.querySelector("#list__header");
+            listHeader.innerHTML = " ";
             listsContainer.innerHTML = " ";
 
             for (const list of arrayLists) { //Ejecutamos la función por cada elemento del array.
@@ -29,6 +44,7 @@ async function printLists() {
             }
         })
 }
+
 
 function printListsCard(objectA) { //Por cada objeto del array
 
@@ -71,7 +87,6 @@ function printListsCard(objectA) { //Por cada objeto del array
 
 
 //Función para crear los libros de la lista
-
 function createBookContainer(oBook) {
     let bookCard = document.createElement("div");
     bookCard.className = "book__container";
@@ -119,6 +134,7 @@ async function getBooksList(list) {
     }
 }
 
+
 let displayName = "";
 async function printBookCards(list) {
     await getBooksList(list)
@@ -144,5 +160,6 @@ async function printBookCards(list) {
             }
         })
 }
+
 
 printLists();
