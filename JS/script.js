@@ -1,10 +1,10 @@
+/* Siento mucho el estado de esta entrega. Definitivamente la retomaré y dejaré muchísimo más presentable... No me siento bien entregando en estas condiciones, pero prefiero que veáis lo que he hecho hasta ahora a no entregar nada, aunque esté a medias.*/
+
+
 //Variables con elementos de la URL y la API key.
 const urlBase = "https://api.nytimes.com/svc/books/v3/lists/";
 const urlBooksList = "";
 const apiKey = "fAqo1kJSkttYlAujHHRSHbgqXsvt5zRJ";
-
-
-
 
 
 // Función para mostrar el Gif loader mientras la ventana esta en carga
