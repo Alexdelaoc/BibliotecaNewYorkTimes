@@ -1,0 +1,9 @@
+#lists__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.list__container{
+    flex: 25%;
+}
